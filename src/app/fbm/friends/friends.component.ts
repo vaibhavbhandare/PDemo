@@ -18,5 +18,6 @@ export class FriendsComponent implements OnInit {
 
   valueset(){
      this.fbser.setdata(this.ids)
+     console.log(this.ids)
   }
 }
