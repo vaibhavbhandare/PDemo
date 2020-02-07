@@ -1,0 +1,22 @@
+<p>List Of Products</p>
+
+Search Text : <input type="text"  #SearchRef (keyup)="validate(SearchRef.value)">
+<table class="table table-dark">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Pri</th>
+        <th>Image</th>
+        <th>Action</th>
+    </tr>
+    <tr *ngFor="let item of productList ; let i=index">
+        <td>{{item.id}}</td>
+        <td>{{item.name}}</td>
+        <td>{{item.price}}</td>
+        <td><img [src]="item.imgPath" class="imges"></td>
+        <td *ngIf="isAdmin" (click)="delete(i)"><button>Delete</button></td>
+        <td><app-pro-updater [price]="item.price" (updatevalue)="updatedvalue($event , i)"></app-pro-updater></td>  
+        <!-- child component -->
+    </tr>
+</table>
+<!-- <app-inventory></app-inventory> -->

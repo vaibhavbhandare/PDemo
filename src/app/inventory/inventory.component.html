@@ -1,0 +1,15 @@
+<p>List Of Products</p>
+<table class="table table-dark">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Pri</th>
+        <th>Image</th>
+    </tr>
+    <tr *ngFor="let item of productList ; let i=index">
+        <td>{{item.id}}</td>
+        <td>{{item.name}}</td>
+        <td>{{item.price}}</td>
+    </tr>
+</table>
+{{id}}
