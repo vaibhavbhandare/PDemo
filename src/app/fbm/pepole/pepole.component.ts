@@ -8,11 +8,12 @@ import { FbserviceService } from '../fbservice.service';
 })
 export class PepoleComponent implements OnInit {
 
-  constructor(private fbser:FbserviceService) { }
-public getid:any;
+  constructor(private fbser: FbserviceService) { }
+  public getid: any;
+  public heading = "this is facebookPlace"
   ngOnInit() {
-    this.fbser.getData().subscribe((data)=>{
-        this.getid = data
+    this.fbser.getData().subscribe((data) => {
+      this.getid = data
     })
   }
 

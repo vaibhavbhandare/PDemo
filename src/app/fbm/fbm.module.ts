@@ -6,10 +6,11 @@ import { PepoleComponent } from './pepole/pepole.component';
 import { FriendsComponent } from './friends/friends.component';
 import { FbserviceService } from './fbservice.service';
 import { FormsModule } from '@angular/forms';
+import { CamelCaseComponent } from './fb.pipe';
 
 
 @NgModule({
-  declarations: [PepoleComponent, FriendsComponent],
+  declarations: [PepoleComponent, FriendsComponent,CamelCaseComponent],
   imports: [
     CommonModule,
     FBMRoutingModule,
