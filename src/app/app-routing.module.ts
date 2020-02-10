@@ -36,6 +36,10 @@ const routes: Routes = [
     path:'fb-M',
     loadChildren:()=> import('./fbm/fbm.module').then(m=>m.FBMModule)
   },
+  // {
+  //   path:'fb-M',
+  //   loadChildren:()=> import('./fbm/fbm.module').then(m=>m.FBMModule)
+  // },
   {
     path: '**',
     component: PageNotFoundComponent
