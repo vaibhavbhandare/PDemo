@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RoutingHeaderComponent implements OnInit {
 
-  public allroutes:Array<String> = ["login","signform",'user','inventory']
+  public allroutes:Array<String> = ["login","signform",'user','inventory','fb-M/observable','fb-M/reactive-form']
   constructor() { }
 
   ngOnInit() {

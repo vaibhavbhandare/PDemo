@@ -1,0 +1,51 @@
+<div class="container">
+    <!-- <label>
+        Name:
+        <input type="text" [formControl]="name">
+    </label>
+    <button (click)="updateName()">Update Name</button>
+      Value : {{name.value}}  -->
+
+    <h1>{{title}}</h1>
+    <div>
+        <form [formGroup]="megaBharatiForm" (ngSubmit)="onSubmit(megaBharatiForm.value)">
+            <div>
+                <label for="">First Name :</label>
+                <input type="text" formControlName="name" id="name" class="form-control" >
+                <div *ngIf="megaBharatiForm.get('name').invalid && (megaBharatiForm.get('name').dirty || megaBharatiForm.get('name').touched)" class="alert alert-danger">
+                    <div *ngIf="megaBharatiForm.get('name').errors.required">
+                        Name is required.
+                    </div>
+                    <div *ngIf="megaBharatiForm.get('name').errors.minlength">
+                        minlength is 4.
+                    </div>
+                </div>
+            </div>
+            <div>
+                <label for="">Last Name :</label>
+                <input type="text" formControlName="lastname" class="form-control" required>
+                <div *ngIf="megaBharatiForm.get('lastname').invalid && (megaBharatiForm.get('lastname').dirty || megaBharatiForm.get('lastname').touched)" class="alert alert-danger">
+                  <div *ngIf="megaBharatiForm.get('lastname').errors.required">
+                       Last Name is Required
+                  </div>
+                </div>
+            </div>
+            <div>
+                <label for="">Age :</label>
+                <input type="number" formControlName="age" class="form-control" required>
+            </div>
+            <div formGroupName="address">
+                <h3>Address</h3>
+                <div>
+                    <label for="">Street</label>
+                    <input type="text" formControlName="street" class="form-control" required>
+                </div>
+                <div>
+                    <label for="">City</label>
+                    <input type="text" formControlName="city" class="form-control" required>
+                </div>
+            </div>
+            <button type="submit" [disabled]="megaBharatiForm.invalid" class="btn btn-success">Submit</button>
+        </form>
+    </div>
+</div>

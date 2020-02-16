@@ -20,13 +20,15 @@ export class UsersComponent implements OnInit {
 
     this.usrser.getUserdataPromis().then((data) => {
       this.userList = data;
-    })
-
-
+    },
+      (err) => {
+        console.log("error"); // getting error when url are wrong
+      }
+    )
   }
 
   userdetails(id) {
-  // this.router.navigate(['/userdetails',id])
+    // this.router.navigate(['/userdetails',id])
   }
 
 }
