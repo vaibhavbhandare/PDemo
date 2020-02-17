@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { ProductsComponent } from './products/products.component';
 import { LoginComponent } from './login/login.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {CommonModule} from '@angular/common';
 import { InventoryComponent } from './inventory/inventory.component'
 import { DataService } from './login/data.service';
@@ -39,7 +39,8 @@ import { UserdetailsComponent } from './userdetails/userdetails.component'
     AppRoutingModule,
     FormsModule,
     CommonModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
  // providers: [DataService],
  providers:[UserService],
