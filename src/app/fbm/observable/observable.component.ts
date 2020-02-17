@@ -8,14 +8,14 @@ import { ObservableService } from './observable.service';
 })
 export class ObservableComponent implements OnInit {
 
-  constructor(private observable:ObservableService) { }
+  constructor(private observable: ObservableService) { }
 
-  public data:any;
+  public data: any;
   ngOnInit() {
 
-    this.observable.getUserdata().subscribe((res)=>{
+    this.observable.getUserdata().subscribe((res) => {
       this.data = res
     })
-    console.log(this.data);  
+    console.log(this.data);
   }
 }
