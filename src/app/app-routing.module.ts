@@ -33,8 +33,8 @@ const routes: Routes = [
     loadChildren: () => import('./skill-m/skill-m.module').then(m => m.SkillMModule)
   },
   {
-    path:'fb-M',
-    loadChildren:()=> import('./fbm/fbm.module').then(m=>m.FBMModule)
+    path: 'fb-M',
+    loadChildren: () => import('./fbm/fbm.module').then(m => m.FBMModule)
   },
   // {
   //   path:'fb-M',

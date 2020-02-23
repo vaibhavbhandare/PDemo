@@ -1,0 +1,22 @@
+<div class="container">
+     <mat-dialog-content>
+          <h1>Hello World</h1>
+     </mat-dialog-content>
+     <mat-dialog-actions>
+          <form #dilogform="ngForm" (ngSubmit)="dilogdata(dilogform.value)">
+               <div class="form-group">
+                    <label for="">Name : </label>
+                    <input type="text" class="form-control" name="firstname" [(ngModel)]="fname" #fnameRef="ngModel"
+                         required>
+                    <div *ngIf="fnameRef.invalid || (fnameRef.dirty && fnameRef.touched)" class="alert alert-danger">
+                         <div *ngIf="fnameRef.errors?.required">
+                              Enter Valid Name
+                         </div>
+                    </div>
+               </div>
+               <button class="btn btn-success" [disabled]="!dilogform.valid">Submit</button>
+               <!-- <button (click)="closeDialogBox()" class="btn btn-primary">Cancel</button> -->
+               <button mat-button mat-dialog-close>Cancel</button>
+          </form>
+     </mat-dialog-actions>
+</div>

@@ -1,50 +1,57 @@
-<h2>SignUp Form </h2>
-<form novalidate #signref="ngForm" (ngSubmit)="submitform(signref.value)">
-  <div class="form-group">
-    <label>ID</label>
-    <input type="text" class="form-control" name="id" required [(ngModel)]="id" #idRef="ngModel">
+<div class="container">
+  <mat-dialog-content>
+    <h2>SignUp Form </h2>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <form novalidate #signref="ngForm" (ngSubmit)="submitform(signref.value)">
+      <div class="form-group">
+        <label>ID</label>
+        <input type="text" class="form-control" name="id" required [(ngModel)]="id" #idRef="ngModel">
 
-  </div>
-  <div class="form-group">
-    <label for="formGroupExampleInput">Enter Name</label>
-    <input type="text" class="form-control" #nameRef="ngModel" minlength="5" [(ngModel)]="person.name"
-      id="formGroupExampleInput" name="name" required>
-    <div *ngIf="nameRef.invalid && (nameRef.dirty || nameRef.touched)" class="alert alert-danger">
-      <div *ngIf="nameRef.errors.required">
-        Enter Valid Name
       </div>
-      <div *ngIf="nameRef.errors.minlength">
-        enter Mini 5 char
+      <div class="form-group">
+        <label for="formGroupExampleInput">Enter Name</label>
+        <input type="text" class="form-control" #nameRef="ngModel" minlength="5" [(ngModel)]="person.name"
+          id="formGroupExampleInput" name="name" required>
+        <div *ngIf="nameRef.invalid && (nameRef.dirty || nameRef.touched)" class="alert alert-danger">
+          <div *ngIf="nameRef.errors.required">
+            Enter Valid Name
+          </div>
+          <div *ngIf="nameRef.errors.minlength">
+            enter Mini 5 char
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
 
-  <div class="form-group">
-    <label for="formGroupExampleInput2">Enter contact number</label>
-    <input type="text" class="form-control" #contactref="ngModel" [(ngModel)]="person.phone" name="contact"
-      id="formGroupExampleInput2" minlength="5" maxlength="10" required>
-    <div *ngIf="contactref.invalid && (contactref.dirty || contactref.touched)" class="alert alert-danger">
-      <div *ngIf="contactref.errors.required">
-        Enter Valid Number
+      <div class="form-group">
+        <label for="formGroupExampleInput2">Enter contact number</label>
+        <input type="text" class="form-control" #contactref="ngModel" [(ngModel)]="person.phone" name="contact"
+          id="formGroupExampleInput2" minlength="5" maxlength="10" required>
+        <div *ngIf="contactref.invalid && (contactref.dirty || contactref.touched)" class="alert alert-danger">
+          <div *ngIf="contactref.errors.required">
+            Enter Valid Number
+          </div>
+          <div *ngIf="contactref.errors.minlength">
+            Enter Min 5 number
+          </div>
+          <div *ngIf="contactref.errors.maxlength">
+            Enter Max 5 Number
+          </div>
+        </div>
       </div>
-      <div *ngIf="contactref.errors.minlength">
-        Enter Min 5 number
+      <div class="form-group">
+        <label for="formGroupExampleInput3">Enter Address</label>
+        <input type="text" class="form-control" #addref="ngModel" required [(ngModel)]="person.address" name="address"
+          id="formGroupExampleInput3">
+        <div *ngIf="addref.invalid && (addref.dirty || addref.touched)" class="alert alert-danger">
+          <div *ngIf="addref.errors.required">
+            Enter re Add
+          </div>
+        </div>
       </div>
-      <div *ngIf="contactref.errors.maxlength">
-        Enter Max 5 Number
-      </div>
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="formGroupExampleInput3">Enter Address</label>
-    <input type="text" class="form-control" #addref="ngModel" required [(ngModel)]="person.address" name="address"
-      id="formGroupExampleInput3">
-    <div *ngIf="addref.invalid && (addref.dirty || addref.touched)" class="alert alert-danger">
-      <div *ngIf="addref.errors.required">
-        Enter re Add
-      </div>
-    </div>
-  </div>
-  <button type="submit" class="btn btn-primary" [disabled]="signref.form.invalid">Submit</button>
-  <button (click)="navigate()">GO Inventory</button>
-</form>
+      <button type="submit" class="btn btn-primary" [disabled]="signref.form.invalid">Submit</button>
+      <!-- <button (click)="navigate()">GO Inventory</button> -->
+      <button mat-button mat-dialog-close>Cancel</button>
+    </form>
+  </mat-dialog-actions>
+</div>

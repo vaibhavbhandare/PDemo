@@ -18,7 +18,10 @@ import { UsersComponent } from './users/users.component';
 import { UserService } from './users/user.service';
 import {HttpClientModule} from '@angular/common/http';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { UserdetailsComponent } from './userdetails/userdetails.component'
+import { UserdetailsComponent } from './userdetails/userdetails.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { MaterialModule } from './material/material.module';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,8 +43,14 @@ import { UserdetailsComponent } from './userdetails/userdetails.component'
     FormsModule,
     CommonModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    //MatSliderModule
+    //MatDialogModule,
+    //MaterialModule,
+    MaterialModule
   ],
+  entryComponents:[SignUpFormComponent],
  // providers: [DataService],
  providers:[UserService],
   bootstrap: [AppComponent]
