@@ -7,6 +7,7 @@ import { UsersComponent } from './users/users.component';
 import { InventoryComponent } from './inventory/inventory.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { UserdetailsComponent } from './userdetails/userdetails.component';
+import { AgGridDemoComponent } from './ag-grid-demo/ag-grid-demo.component';
 
 
 const routes: Routes = [
@@ -40,6 +41,9 @@ const routes: Routes = [
   //   path:'fb-M',
   //   loadChildren:()=> import('./fbm/fbm.module').then(m=>m.FBMModule)
   // },
+  {
+    path:'ag-grid' , component:AgGridDemoComponent
+  },
   {
     path: '**',
     component: PageNotFoundComponent

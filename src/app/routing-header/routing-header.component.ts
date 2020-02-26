@@ -8,7 +8,7 @@ import { ReactiveFormComponent } from '../fbm/reactive-form/reactive-form.compon
 })
 export class RoutingHeaderComponent implements OnInit {
 
-  public allroutes: Array<String> = ["login", 'inventory', 'user', 'fb-M/observable', 'fb-M/reactive-form']
+  public allroutes: Array<String> = ["login", 'inventory', 'user', 'fb-M/observable', 'fb-M/reactive-form','ag-grid']
   constructor(private dialog: MatDialog) { }
 
   ngOnInit() {

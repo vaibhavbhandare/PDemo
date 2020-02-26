@@ -21,7 +21,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { UserdetailsComponent } from './userdetails/userdetails.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { MaterialModule } from './material/material.module';
-
+import { AgGridModule } from 'ag-grid-angular';
+import { AgGridDemoComponent } from './ag-grid-demo/ag-grid-demo.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +36,8 @@ import { MaterialModule } from './material/material.module';
     RoutingHeaderComponent,
     UsersComponent,
     PageNotFoundComponent,
-    UserdetailsComponent
+    UserdetailsComponent,
+    AgGridDemoComponent
   ],
   imports: [
     BrowserModule,
@@ -45,13 +47,10 @@ import { MaterialModule } from './material/material.module';
     HttpClientModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    //MatSliderModule
-    //MatDialogModule,
-    //MaterialModule,
-    MaterialModule
+    MaterialModule,
+    AgGridModule.withComponents([])
   ],
   entryComponents:[SignUpFormComponent],
- // providers: [DataService],
  providers:[UserService],
   bootstrap: [AppComponent]
 })
