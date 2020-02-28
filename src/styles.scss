@@ -3,5 +3,10 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
+// Set the colors to blue and amber
+$ag-primary-color: #2196F3; // blue-500
+$ag-accent-color: blue; // amber-A200
+
 @import "~ag-grid-community/dist/styles/ag-grid.css";
 @import "~ag-grid-community/dist/styles/ag-theme-balham.css";
+@import '~ag-grid-community/src/styles/ag-theme-material/sass/ag-theme-material';

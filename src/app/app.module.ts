@@ -48,7 +48,7 @@ import { AgGridDemoComponent } from './ag-grid-demo/ag-grid-demo.component';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     MaterialModule,
-    AgGridModule.withComponents([])
+    AgGridModule.withComponents([AgGridDemoComponent])
   ],
   entryComponents:[SignUpFormComponent],
  providers:[UserService],
