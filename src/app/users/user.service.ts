@@ -1,4 +1,4 @@
-import{Injectable} from "@angular/core";
+import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 
@@ -7,20 +7,20 @@ import {Observable} from 'rxjs';
 
 export class UserService {
 
-    public url:string ="http://jsonplaceholder.typicode.com/users";
-    constructor(private http:HttpClient){
-       
+    public url = 'http://jsonplaceholder.typicode.com/users';
+    constructor(private http: HttpClient) {
+
     }
 
 
-    getUserdata():Observable<any>{
-       return this.http.get(this.url)
+    getUserdata(): Observable<any> {
+       return this.http.get(this.url);
     }
 
-    getUserdataPromis():Promise<any>{
-        return this.http.get(this.url).toPromise()
+    getUserdataPromis(): Promise<any> {
+        return this.http.get(this.url).toPromise();
      }
-    postUserdata(value):Observable<any>{
-        return this.http.post(this.url+'/',value)
+    postUserdata(value): Observable<any> {
+        return this.http.post(this.url + '/', value);
     }
 }

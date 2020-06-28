@@ -8,16 +8,16 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 export class MyDialogComponentComponent implements OnInit {
 
   constructor(private dialog: MatDialog,
-    public dialogRef: MatDialogRef<MyDialogComponentComponent>,
-    @Inject(MAT_DIALOG_DATA) public data:any) { }
+              public dialogRef: MatDialogRef<MyDialogComponentComponent>,
+              @Inject(MAT_DIALOG_DATA) public data: any) { }
+
+  fname: any = 'vaibhav';
 
   ngOnInit() {
   }
-
-  fname: any = "vaibhav";
   dilogdata(value) {
     console.log(value);
-    this.dialogRef.close("it was close"); // this msg reflects in subscribe class observable 
+    this.dialogRef.close('it was close'); // this msg reflects in subscribe class observable
   }
 
   // closeDialogBox() {

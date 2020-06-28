@@ -12,6 +12,6 @@ import { SkillServiceService } from './skill-service.service';
     CommonModule,
     SkillMRoutingModule
   ],
-   providers:[SkillServiceService]
+   providers: [SkillServiceService]
 })
 export class SkillMModule { }

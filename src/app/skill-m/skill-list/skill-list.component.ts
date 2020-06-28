@@ -8,7 +8,7 @@ import { SkillServiceService } from '../skill-service.service';
 })
 export class SkillListComponent implements OnInit {
 
-  constructor(private skillservice:SkillServiceService) { 
+  constructor(private skillservice: SkillServiceService) {
 
   }
 

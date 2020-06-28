@@ -1,4 +1,4 @@
-import { Component, OnInit ,Inject} from '@angular/core';
+import { Component, OnInit , Inject} from '@angular/core';
 import { Person } from './Person';
 import { UserService } from '../users/user.service';
 import { Router } from '@angular/router';
@@ -12,14 +12,14 @@ export class SignUpFormComponent {
   public id: any = 5;
   person: Person = {
     name: 'James',
-    phone: "1234",
+    phone: '1234',
     address: 'India'
 
-  }
+  };
 
   constructor(private userser: UserService, private router: Router,
-    public dialogRef: MatDialogRef<SignUpFormComponent>,
-    @Inject(MAT_DIALOG_DATA) public data:any) { }
+              public dialogRef: MatDialogRef<SignUpFormComponent>,
+              @Inject(MAT_DIALOG_DATA) public data: any) { }
 
     onNoClick(): void {
       this.dialogRef.close();
@@ -29,12 +29,12 @@ export class SignUpFormComponent {
     console.log(value);
     this.userser.postUserdata(value).subscribe(data => {
      // alert('data submitted');
-    })
-    this.dialogRef.close('sign up form close')
+    });
+    this.dialogRef.close('sign up form close');
   }
 
   navigate() {
-    this.router.navigate(['/inventory', 2])
+    this.router.navigate(['/inventory', 2]);
   }
 
 }

@@ -17,18 +17,18 @@ export class ObservableComponent implements OnInit {
   ngOnInit() {
 
     this.observable.getUserdata().subscribe((res) => {
-      this.data = res
-    })
+      this.data = res;
+    });
     console.log(this.data);
   }
 
   openDialogBox() {
-   const dialogRef= this.dialog.open(MyDialogComponentComponent, {
+    const dialogRef = this.dialog.open(MyDialogComponentComponent, {
       width: '250px', height: '300px'
-    })
+    });
 
     dialogRef.afterClosed().subscribe(result => {
-      //console.log('The dialog was closed');
+      // console.log('The dialog was closed');
       console.log(result);
     });
   }

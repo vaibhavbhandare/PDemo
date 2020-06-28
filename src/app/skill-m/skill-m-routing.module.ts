@@ -5,7 +5,7 @@ import { SkillListComponent } from './skill-list/skill-list.component';
 
 const routes: Routes = [
   {
-    path:'skill-list',
+    path: 'skill-list',
     component: SkillListComponent
   }
 ];

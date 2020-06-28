@@ -11,7 +11,7 @@ export class UsersComponent implements OnInit {
 
   public userList: any;
   constructor(private usrser: UserService,
-    private router: Router) { }
+              private router: Router) { }
 
   ngOnInit() {
     // this.usrser.getUserdata().subscribe((data=>{
@@ -22,9 +22,9 @@ export class UsersComponent implements OnInit {
       this.userList = data;
     },
       (err) => {
-        console.log("error"); // getting error when url are wrong
+        console.log('error'); // getting error when url are wrong
       }
-    )
+    );
   }
 
   userdetails(id) {

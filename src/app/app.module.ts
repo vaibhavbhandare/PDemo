@@ -8,7 +8,7 @@ import { ProductsComponent } from './products/products.component';
 import { LoginComponent } from './login/login.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {CommonModule} from '@angular/common';
-import { InventoryComponent } from './inventory/inventory.component'
+import { InventoryComponent } from './inventory/inventory.component';
 import { DataService } from './login/data.service';
 import { ProUpdaterComponent } from './products/pro-updater/pro-updater.component';
 import { HeaderComponent } from './header/header.component';
@@ -19,7 +19,7 @@ import { UserService } from './users/user.service';
 import {HttpClientModule} from '@angular/common/http';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { UserdetailsComponent } from './userdetails/userdetails.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
 
 @NgModule({
@@ -45,14 +45,14 @@ import { MaterialModule } from './material/material.module';
     HttpClientModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    //MatSliderModule
-    //MatDialogModule,
-    //MaterialModule,
+    // MatSliderModule
+    // MatDialogModule,
+    // MaterialModule,
     MaterialModule
   ],
-  entryComponents:[SignUpFormComponent],
+  entryComponents: [SignUpFormComponent],
  // providers: [DataService],
- providers:[UserService],
+ providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

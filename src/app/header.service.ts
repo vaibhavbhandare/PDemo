@@ -1,21 +1,21 @@
-import { Injectable } from "@angular/core";
+import { Injectable } from '@angular/core';
 import { Subject , Observable } from 'rxjs';
 
 @Injectable()
 
 export class HeaderAuthService {
 
-    constructor(){
+    constructor() {
 
     }
-  
+
     subject = new Subject<string>();
 
-    setUname(name:string){
-      this.subject.next(name)
+    setUname(name: string) {
+      this.subject.next(name);
     }
 
-    getUname():Observable<String>{
+    getUname(): Observable<string> {
      return this.subject.asObservable();
     }
 

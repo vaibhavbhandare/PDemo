@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { DataService } from './login/data.service';
 import { HeaderAuthService } from './header.service';
 import { WelcomeComponent } from './welcome/welcome.component';
-import { MatDialog } from '@angular/material/dialog'
+import { MatDialog } from '@angular/material/dialog';
 import { SignUpFormComponent } from './signup/signupform.component';
 @Component({
   selector: 'app-root',
@@ -16,8 +16,8 @@ export class AppComponent {
 
   openDialog(): void {
     const dialogRef = this.dialog.open(SignUpFormComponent, {
-      width: '250px',height:'500px'
-      //data: {name: this.name, animal: this.animal}
+      width: '250px', height: '500px'
+      // data: {name: this.name, animal: this.animal}
     });
 
     dialogRef.afterClosed().subscribe(result => {

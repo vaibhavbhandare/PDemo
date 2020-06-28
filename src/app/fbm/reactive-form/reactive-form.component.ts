@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, FormBuilder , Validators} from '@angular/forms'
+import { FormControl, FormGroup, FormBuilder , Validators} from '@angular/forms';
 
 
 @Component({
@@ -8,19 +8,12 @@ import { FormControl, FormGroup, FormBuilder , Validators} from '@angular/forms'
   styleUrls: ['./reactive-form.component.css']
 })
 export class ReactiveFormComponent implements OnInit {
-
-  public changename = "vaibhav"
-  public title: string = "Maharashtra Mega Bharati Online";
   constructor(private fb: FormBuilder) { }
 
-  ngOnInit() {
-  }
+  public changename = 'vaibhav';
+  public title = 'Maharashtra Mega Bharati Online';
 
-  name = new FormControl('Hi')
-
-  updateName() {
-    this.name.setValue(this.changename)
-  }
+  name = new FormControl('Hi');
 
   // megaBharatiForm = new FormGroup({
   //   name : new FormControl('Vaibhav'),
@@ -34,10 +27,10 @@ export class ReactiveFormComponent implements OnInit {
   //   })
   // })
 
-  // Using FormBuilder 
+  // Using FormBuilder
 
   megaBharatiForm = this.fb.group({
-    name: ['' , [Validators.required,Validators.minLength(4)]],
+    name: ['' , [Validators.required, Validators.minLength(4)]],
     lastname: ['' , Validators.required],
     age : [''],
     address: this.fb.group({
@@ -46,10 +39,17 @@ export class ReactiveFormComponent implements OnInit {
       state: [''],
       zipcode: ['']
     })
-  })
+  });
 
-  onSubmit(value){
+  ngOnInit() {
+  }
+
+  updateName() {
+    this.name.setValue(this.changename);
+  }
+
+  onSubmit(value) {
      console.log(value);
-     
+
   }
 }

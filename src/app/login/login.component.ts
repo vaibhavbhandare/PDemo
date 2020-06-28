@@ -8,15 +8,15 @@ import { HeaderAuthService } from '../header.service';
 })
 export class LoginComponent implements OnInit {
 
-  public UN:string="admin"
-  public PWD:string="admin"
-  constructor(private auth:HeaderAuthService) { }
+  public UN = 'admin';
+  public PWD = 'admin';
+  constructor(private auth: HeaderAuthService) { }
 
   ngOnInit() {
   }
 
-  login(){
-   this.auth.setUname(this.UN)
+  login() {
+   this.auth.setUname(this.UN);
   }
 
 }

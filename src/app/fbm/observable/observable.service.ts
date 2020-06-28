@@ -8,17 +8,17 @@ export class ObservableService {
     constructor() {
 
     }
-    public url: string = "http://jsonplaceholder.typicode.com/users";
+    public url = 'http://jsonplaceholder.typicode.com/users';
 
     getUserdata(): Observable<any> {
-        let observableObject = new Observable((observer) => {
-            observer.next(this.url)
+        const observableObject = new Observable((observer) => {
+            observer.next(this.url);
 
             setTimeout(() => {
-                observer.next('String Get Reflected from Observable next method')
+                observer.next('String Get Reflected from Observable next method');
                 // observer.unsubscribe()
-            }, 5000)
-        })
-        return observableObject
+            }, 5000);
+        });
+        return observableObject;
     }
 }

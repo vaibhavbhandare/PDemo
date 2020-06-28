@@ -1,4 +1,4 @@
-import { Component, OnInit ,Input, Output,EventEmitter} from '@angular/core';
+import { Component, OnInit , Input, Output, EventEmitter} from '@angular/core';
 
 
 @Component({
@@ -8,16 +8,16 @@ import { Component, OnInit ,Input, Output,EventEmitter} from '@angular/core';
 })
 export class ProUpdaterComponent implements OnInit {
 
-  @Input() price:number;
+  @Input() price: number;
 
-  @Output() updatevalue = new EventEmitter<number>()
+  @Output() updatevalue = new EventEmitter<number>();
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  updateprice(price){
-     this.updatevalue.emit(price)
+  updateprice(price) {
+     this.updatevalue.emit(price);
   }
 }

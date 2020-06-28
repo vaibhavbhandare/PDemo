@@ -10,10 +10,11 @@ import { ObservableComponent } from './observable/observable.component';
 import { ObservableService } from './observable/observable.service';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { MyDialogComponentComponent } from './my-dialog-component/my-dialog-component.component';
-import { MaterialModule } from '../material/material.module'
+import { MaterialModule } from '../material/material.module';
 
 @NgModule({
-  declarations: [PepoleComponent, FriendsComponent,CamelCaseComponent, ObservableComponent, ReactiveFormComponent, MyDialogComponentComponent],
+  declarations: [PepoleComponent, FriendsComponent, CamelCaseComponent,
+     ObservableComponent, ReactiveFormComponent, MyDialogComponentComponent],
   imports: [
     CommonModule,
     FBMRoutingModule,
@@ -21,7 +22,7 @@ import { MaterialModule } from '../material/material.module'
     ReactiveFormsModule,
     MaterialModule
   ],
-  entryComponents:[MyDialogComponentComponent],
-  providers:[FbserviceService , ObservableService]
+  entryComponents: [MyDialogComponentComponent],
+  providers: [FbserviceService , ObservableService]
 })
 export class FBMModule { }
