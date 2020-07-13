@@ -8,16 +8,16 @@ import { FbserviceService } from '../fbservice.service';
 })
 export class FriendsComponent implements OnInit {
 
-  public ids:any;
-  constructor(private fbser:FbserviceService) {
+  public ids: any;
+  constructor(private fbser: FbserviceService) {
 
    }
 
   ngOnInit() {
   }
 
-  valueset(){
-     this.fbser.setdata(this.ids)
-     console.log(this.ids)
+  valueset() {
+     this.fbser.setdata(this.ids);
+     console.log(this.ids);
   }
 }

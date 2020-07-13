@@ -22,7 +22,9 @@ import { UserdetailsComponent } from './userdetails/userdetails.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { MaterialModule } from './material/material.module';
 import { AgGridModule } from 'ag-grid-angular';
-import { AgGridDemoComponent } from './ag-grid-demo/ag-grid-demo.component';
+
+import { AgGridTreeComponent } from './ag-grid-tree/ag-grid-tree.component';
+import { StartUpComponent } from './startup-metrics-component/StartUpComponent.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +39,8 @@ import { AgGridDemoComponent } from './ag-grid-demo/ag-grid-demo.component';
     UsersComponent,
     PageNotFoundComponent,
     UserdetailsComponent,
-    AgGridDemoComponent
+    StartUpComponent,
+    AgGridTreeComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +51,7 @@ import { AgGridDemoComponent } from './ag-grid-demo/ag-grid-demo.component';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     MaterialModule,
-    AgGridModule.withComponents([AgGridDemoComponent])
+    AgGridModule.withComponents([StartUpComponent,AgGridTreeComponent])
   ],
   entryComponents:[SignUpFormComponent],
  providers:[UserService],

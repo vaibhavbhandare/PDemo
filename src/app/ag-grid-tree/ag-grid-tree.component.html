@@ -1,0 +1,17 @@
+<div class="container">
+    <ag-grid-angular 
+    #agGrid 
+    id="myGrid"  
+    class="ag-theme-material country_detail_grid"
+    [columnDefs]="columnDefs" 
+    [rowData]="rowData"
+    [treeData]="true"
+    [modules]="modules"
+    [animateRows]="true"
+    [getDataPath]="getDataPath"
+    [autoGroupColumnDef]="autoGroupColumnDef"
+    [groupDefaultExpanded]="groupDefaultExpanded"
+    [gridOptions]="gridOptions"
+   >
+  </ag-grid-angular>
+</div>

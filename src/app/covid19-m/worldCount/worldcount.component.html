@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="row">
+        <h1>Hello {{getCovidPatient()}}</h1>
+    </div>
+    <div class="row">
+      <div class="col-sm-6">
+            <!-- <b *ngFor="let item of patientSatatList; let i=index">{{item}}{{i}}</b> <br>   -->
+            <!-- <ng-container *ngFor="let item of patientSatatList; let i=index">
+                {{item}}{{i}}
+            </ng-container>   <br>  -->
+            <div>
+                <ul>
+                    <li *ngFor="let item of patientSatatList; let i=index">
+                        {{i}}  {{item}}
+                    </li>
+                </ul>
+            </div>
+            <div class="">
+
+            </div>
+      </div>
+      <div class="col-sm-6">
+          <div>
+              <h2>Display date here</h2>
+              {{giveDate | date : 'shortDate'}}
+              <!-- {{giveDate | date : 'h:mm a z'}} -->
+          </div>
+      </div>
+    </div>
+</div>

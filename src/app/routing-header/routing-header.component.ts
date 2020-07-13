@@ -8,7 +8,8 @@ import { ReactiveFormComponent } from '../fbm/reactive-form/reactive-form.compon
 })
 export class RoutingHeaderComponent implements OnInit {
 
-  public allroutes: Array<String> = ["login", 'inventory', 'user', 'fb-M/observable', 'fb-M/reactive-form','ag-grid']
+  public allroutes: Array<any> = ['login', 'inventory', 'user', 'fb-M/observable', 'fb-M/reactive-form', 'StartUp', 'ag-grid-tree',
+                                    'covid19m'];
   constructor(private dialog: MatDialog) { }
 
   ngOnInit() {
@@ -20,7 +21,7 @@ export class RoutingHeaderComponent implements OnInit {
   openDialogbox(): void {
     const dialogRef = this.dialog.open(ReactiveFormComponent, {
       width: '500px', height: '500px'
-      //data: {name: this.name, animal: this.animal}
+      // data: {name: this.name, animal: this.animal}
     });
 
     dialogRef.afterClosed().subscribe(result => {

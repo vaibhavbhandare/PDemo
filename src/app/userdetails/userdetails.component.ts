@@ -23,7 +23,7 @@ export class UserdetailsComponent implements OnInit {
     this.activateroute.params.subscribe(data => {
       this.id = Number(data['id'])
     })
-   console.log(this.id);
+   //console.log(this.id);
    
     
 

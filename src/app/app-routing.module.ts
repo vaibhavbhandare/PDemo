@@ -7,7 +7,10 @@ import { UsersComponent } from './users/users.component';
 import { InventoryComponent } from './inventory/inventory.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { UserdetailsComponent } from './userdetails/userdetails.component';
-import { AgGridDemoComponent } from './ag-grid-demo/ag-grid-demo.component';
+
+import { AgGridTreeComponent } from './ag-grid-tree/ag-grid-tree.component';
+
+import { StartUpComponent } from './startup-metrics-component/StartUpComponent.component';
 
 
 const routes: Routes = [
@@ -42,13 +45,18 @@ const routes: Routes = [
   //   loadChildren:()=> import('./fbm/fbm.module').then(m=>m.FBMModule)
   // },
   {
-    path:'ag-grid' , component:AgGridDemoComponent
+    path: 'StartUp' , component: StartUpComponent
+  },
+  {
+    path: 'ag-grid-tree' , component: AgGridTreeComponent
+  },
+  { path: 'covid19m',
+    loadChildren: () => import('./covid19-m/covid19-m.module').then( m => m.Covid19MModule)
   },
   {
     path: '**',
     component: PageNotFoundComponent
   }
-
 ];
 
 @NgModule({
