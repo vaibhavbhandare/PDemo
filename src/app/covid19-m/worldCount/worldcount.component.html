@@ -20,11 +20,22 @@
             </div>
       </div>
       <div class="col-sm-6">
-          <div>
+          <div class="row">
               <h2>Display date here</h2>
               {{giveDate | date : 'shortDate'}}
               <!-- {{giveDate | date : 'h:mm a z'}} -->
           </div>
+          <div class="row">
+              <h2>{{RedZoneHeadingFirst}}</h2>
+              <input type="text" [(ngModel)] = 'RedZoneHeading'>
+              <button mat-raised-button color="primary" (click)="getRedZoneList(RedZoneHeading)">Change Heading</button>
+          </div>
       </div>
+    </div>
+    <div>
+        <h1>Life Cycle Hook Execution Present in WorldCount Component</h1>
+        <div>
+            <button mat-raised-button color="primary" (click)="executeHooks()">Execute Life Cycle hooks</button>
+        </div>
     </div>
 </div>

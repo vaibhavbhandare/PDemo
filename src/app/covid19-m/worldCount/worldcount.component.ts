@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CovidDataService } from '../services/coviddata.service';
 import { DatePipe } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-world',
@@ -13,9 +14,12 @@ export class WorldCountComponent implements OnInit {
     public applyHeading: any;
     public patientSatatList: any;
     public giveDate: any;
+    public RedZoneHeading: string;
+    public RedZoneHeadingFirst = '';
 
     constructor(private covidDataService: CovidDataService,
-                private datepipe: DatePipe) {
+                private datepipe: DatePipe,
+                private router: Router) {
 
     }
 
@@ -33,8 +37,7 @@ export class WorldCountComponent implements OnInit {
      // console.log(this.patientSatatList.splice(1,2,"A","B"));
      // console.log(this.patientSatatList.indexOf('GhatisGhad'));
      // console.log(this.patientSatatList.join('-'));
-
-    //  console.log(start.split(''));
+     //  console.log(start.split(''));
      this.giveDate = Date.now();
      console.log(this.datepipe.transform(this.giveDate , 'M/d/yy, h:mm a'));
     }
@@ -45,5 +48,19 @@ export class WorldCountComponent implements OnInit {
         });
         return this.applyHeading;
     }
+
+    executeHooks() {
+      this.router.navigate(['/fb-M/observable']);
+    }
+
+    getRedZoneList(data) {
+      this.covidDataService.CountryCounts(data);
+      this.RedZoneHeadingFirst =  this.covidDataService.CountryCount();
+    //   .subscribe(value => {
+    //       this.RedZoneHeadingFirst = value;
+    //   });
+    }
+
+
 
 }
