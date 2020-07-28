@@ -3,8 +3,10 @@
         <li *ngFor="let item of allroutes">
             <a routerLink="/{{item}}" routerLinkActive="active">{{item}}</a>
         </li>
-        <button class="but" routerLink="/Skill-M/skill-list">SkillM</button>
-        <button class="but" routerLink="/fb-M/fb">FB-M</button>
+        <div class="routing-button">
+            <button class="but" routerLink="/Skill-M/skill-list">SkillM</button>
+            <button class="but" routerLink="/fb-M/fb">FB-M</button>
+        </div>
         <!-- <a [routerLink]="['/fb-M/dialogComp']" routerLinkActive="router-link-active" >D</a> -->
         <!-- <select name="" id="">Menu
             <option *ngFor="let item of allroutes" [value]="item" (click)="getvalue($event)">

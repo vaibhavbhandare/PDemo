@@ -1,41 +1,51 @@
-<div class="container">
-    <!-- <label>
-        Name:
-        <input type="text" [formControl]="name">
-    </label>
-    <button (click)="updateName()">Update Name</button>
-      Value : {{name.value}}  -->
-
-    <h1>{{title}}</h1>
+<div class="container" style="overflow:auto">
+    <div class="row" style="margin-top: 35px;">
+        <p>
+            <mat-toolbar>
+                <span>Maharashtra Mega Bharati Online 2020</span>
+                <span style="margin-left: 575px;">Date : {{todaydate}}</span>
+            </mat-toolbar>
+        </p>
+    </div>
     <div>
         <form [formGroup]="megaBharatiForm" (ngSubmit)="onSubmit(megaBharatiForm.value)">
             <div>
                 <label for="">First Name :</label>
-                <input type="text" formControlName="name" id="name" class="form-control" >
-                <div *ngIf="megaBharatiForm.get('name').invalid && (megaBharatiForm.get('name').dirty || megaBharatiForm.get('name').touched)" class="alert alert-danger">
-                    <div *ngIf="megaBharatiForm.get('name').errors.required">
-                        Name is required.
-                    </div>
-                    <div *ngIf="megaBharatiForm.get('name').errors.minlength">
-                        minlength is 4.
-                    </div>
+                <input type="text" formControlName="name" id="name" class="form-control">
+                <div *ngIf="megaBharatiForm.get('name').invalid && megaBharatiForm.get('name').errors.required"
+                    class="alert alert-danger">
+                    Name is required.
+                </div>
+                <div *ngIf="megaBharatiForm.get('name').invalid && megaBharatiForm.get('name').errors.minlength"
+                    class="alert alert-danger">
+                    minlength is 4.
                 </div>
             </div>
             <div>
                 <label for="">Last Name :</label>
                 <input type="text" formControlName="lastname" class="form-control" required>
-                <div *ngIf="megaBharatiForm.get('lastname').invalid && (megaBharatiForm.get('lastname').dirty || megaBharatiForm.get('lastname').touched)" class="alert alert-danger">
-                  <div *ngIf="megaBharatiForm.get('lastname').errors.required">
-                       Last Name is Required
-                  </div>
+                <!-- <div *ngIf="megaBharatiForm.get('lastname').invalid && (megaBharatiForm.get('lastname').dirty || megaBharatiForm.get('lastname').touched)" class="alert alert-danger">
+                  
+                </div> -->
+                <div *ngIf="megaBharatiForm.get('lastname').invalid && megaBharatiForm.get('lastname').errors.required"
+                    class="alert alert-danger">
+                    Last Name is Required
+                </div>
+                <div *ngIf="megaBharatiForm.get('lastname').invalid && megaBharatiForm.get('lastname').errors.minlength"
+                    class="alert alert-danger">
+                    minlength is 4.
                 </div>
             </div>
             <div>
                 <label for="">Age :</label>
-                <input type="number" formControlName="age" class="form-control" required>
+                <input type="number" formControlName="ages" class="form-control" required>
+                <div *ngIf="megaBharatiForm.get('ages').invalid && megaBharatiForm.get('ages').errors.required"
+                    class="alert alert-danger">
+                    Age is Required
+                </div>
             </div>
             <div formGroupName="address">
-                <h3>Address</h3>
+                <h6>Address Details</h6>
                 <div>
                     <label for="">Street</label>
                     <input type="text" formControlName="street" class="form-control" required>
@@ -45,7 +55,13 @@
                     <input type="text" formControlName="city" class="form-control" required>
                 </div>
             </div>
-            <button type="submit" [disabled]="megaBharatiForm.invalid" class="btn btn-success">Submit</button>
+            <div>
+                <p>{{megaBharatiForm.value | json}}</p>
+                <p>{{megaBharatiForm.status | json}}</p>
+            </div>
+            <div class="subbutton">
+                <button mat-raised-button color="primary" [disabled]="megaBharatiForm.invalid">Submit</button>
+            </div>
         </form>
     </div>
 </div>

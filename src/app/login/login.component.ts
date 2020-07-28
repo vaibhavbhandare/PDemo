@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { HeaderAuthService } from '../header.service';
+import { FormControl, FormGroup, Validators, FormBuilder } from '@angular/forms';
+import { MatDialog } from '@angular/material';
+import { Router } from '@angular/router';
+import { SubmitUserComponent } from './common/submituser.component';
+
 
 @Component({
   selector: 'app-login',
@@ -8,15 +13,72 @@ import { HeaderAuthService } from '../header.service';
 })
 export class LoginComponent implements OnInit {
 
-  public UN:string="admin"
-  public PWD:string="admin"
-  constructor(private auth:HeaderAuthService) { }
+  public UN: string = "admin"
+  public PWD: string = "admin"
+  public changeColor: Boolean;
+  public role = '179.54567';
+  public stockChangeForm: any;
+  public serviceProduct: Array<string>;
 
-  ngOnInit() {
+  constructor(private auth: HeaderAuthService,
+    private fb: FormBuilder, private dialog: MatDialog,
+    private router: Router) {
+    this.changeColor = false;
+    this.serviceProduct = ['Google', 'Facebook', 'MicroSoft', 'BMW']
   }
 
-  login(){
-   this.auth.setUname(this.UN)
+
+
+  ngOnInit() {
+    
+    this.stockChangeForm = new FormGroup({
+      name: new FormControl('', [Validators.required, Validators.maxLength(10)]),
+      selectedProduct: new FormControl('', [Validators.required]),
+      date: new FormControl('', [Validators.required]),
+      text: new FormControl('', [Validators.required, Validators.maxLength(10)])
+    })
+
+    // this.stockChangeForm = this.fb.group({
+    //   name: ['', [Validators.required, Validators.minLength(6)]],
+    //   selectedProduct: ['', [Validators.required]],
+    //   date: ['', Validators.required],
+    //   text: ['', [Validators.required, Validators.minLength(10)]]
+    // })
+  }
+
+  login() {
+    this.auth.setUname(this.UN)
+    this.changeColor = false;
+  }
+
+  changeHeadingColor() {
+    this.changeColor = true;
+    this.role = Number(this.role).toFixed(0);
+  }
+
+  onSubmit(value) {
+    console.log(value);
+    const dialogRef = this.dialog.open(SubmitUserComponent, {
+      width: '400px', height: '200px'
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      // console.log('The dialog was closed');
+      console.log(result);
+    });
+
+  }
+
+  onCancel() {
+    this.stockChangeForm.reset();
+  }
+
+  openSignUpform() {
+
+  }
+
+  public hasError = (controlName: string, errorName: string) =>{
+    return this.stockChangeForm.controls[controlName].hasError(errorName);
   }
 
 }

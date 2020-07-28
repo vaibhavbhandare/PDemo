@@ -25,6 +25,7 @@ import { AgGridModule } from 'ag-grid-angular';
 
 import { AgGridTreeComponent } from './ag-grid-tree/ag-grid-tree.component';
 import { StartUpComponent } from './startup-metrics-component/StartUpComponent.component';
+import { SubmitUserComponent } from './login/common/submituser.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +41,8 @@ import { StartUpComponent } from './startup-metrics-component/StartUpComponent.c
     PageNotFoundComponent,
     UserdetailsComponent,
     StartUpComponent,
-    AgGridTreeComponent
+    AgGridTreeComponent,
+    SubmitUserComponent
   ],
   imports: [
     BrowserModule,
@@ -53,8 +55,8 @@ import { StartUpComponent } from './startup-metrics-component/StartUpComponent.c
     MaterialModule,
     AgGridModule.withComponents([StartUpComponent,AgGridTreeComponent])
   ],
-  entryComponents:[SignUpFormComponent],
- providers:[UserService],
+  entryComponents:[SignUpFormComponent, SubmitUserComponent],
+  providers:[UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
