@@ -3,7 +3,7 @@
         <h1>Hello {{getCovidPatient()}}</h1>
     </div>
     <div class="row">
-      <div class="col-sm-6">
+        <div class="col-sm-6">
             <!-- <b *ngFor="let item of patientSatatList; let i=index">{{item}}{{i}}</b> <br>   -->
             <!-- <ng-container *ngFor="let item of patientSatatList; let i=index">
                 {{item}}{{i}}
@@ -11,37 +11,84 @@
             <div>
                 <ul>
                     <li *ngFor="let item of patientSatatList; let i=index">
-                        {{i}}  {{item}}
+                        {{i}} {{item}}
                     </li>
                 </ul>
             </div>
             <div class="">
 
             </div>
-      </div>
-      <div class="col-sm-6">
-          <div class="row">
-              <h2>Display date here</h2>
-              {{giveDate | date : 'shortDate'}}
-              <!-- {{giveDate | date : 'h:mm a z'}} -->
-          </div>
-          <div class="row">
-              <h2>{{RedZoneHeadingFirst}}</h2>
-              <input type="text" [(ngModel)] = 'RedZoneHeading'>
-              <button mat-raised-button color="primary" (click)="getRedZoneList(RedZoneHeading)">Change Heading</button>
-              <button mat-raised-button color="accent" (click)="opendialog()">Open Dialog</button>
-          </div>
-          <div class="row" style="margin-top: 20px;">
-             <figure class="galllery-item">
-               <img src="/assets/img/gallexies.jpg" height="200px" width="350px">
-             </figure>
-          </div>
-      </div>
-    </div>
-    <div>
-        <h1>Life Cycle Hook Execution Present in WorldCount Component</h1>
+        </div>
+        <div class="col-sm-6">
+            <div class="row">
+                <div class="col-sm-4">
+                    <h6>Display date here</h6>
+                    {{giveDate | date : 'shortDate'}}
+                    <!-- {{giveDate | date : 'h:mm a z'}} -->
+                </div>
+                <div class="col-sm-4">
+                    <h6>check activated child guard</h6>
+                    <button mat-raised-button color="primary" [routerLink]="['/covid19m/mhreport']">MHReport</button>
+                </div>
+                <div class="col-sm-4">
+                    <h6>chekck ngModeloption</h6>
+                    <div>
+                        <form [formGroup]="rafelform">
+                            <div>
+                                <!-- <label>last Name</label>
+                            <input type="text" [(ngModel)]="lname" [ngModelOptions]="{updateOn:'blur'}">
+                            <h2>{{lname}}</h2> -->
+                            </div>
+                            <div>
+                                <label for="">Email</label>
+                                <input type="email" name="" id="" formControlName="email" required>
+                                <div *ngIf="rafelform.get('email').invalid && rafelform.get('email').errors"
+                                    class="alert alert-danger">
+                                    Please Enter Email
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- local storage and session storage -->
+            <div class="row">
+                <mat-card>
+                    <mat-card-header>
+                        <mat-card-title>Storage</mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content>
+                        <p>
+                            local storage and session storage
+                        </p>
+                    </mat-card-content>
+                    <mat-card-actions>
+                        <button mat-raised-button color="primary" (click)="setlocal()">Set Local Storage</button>
+                        <button mat-raised-button color="accent" (click)="getlocal()">Get Local Storage</button>
+                        <button mat-raised-button color="warn" (click)="removeItemOfLocal()">Remove local key</button>
+                    </mat-card-actions>
+                </mat-card>
+                <div class="row">
+                    <div>
+                        <h2>{{RedZoneHeadingFirst}}</h2>
+                        <input type="text" [(ngModel)]='RedZoneHeading'>
+                        <button mat-raised-button color="primary" (click)="getRedZoneList(RedZoneHeading)">Change
+                            Heading</button>
+                    </div>
+                    <button mat-raised-button color="accent" (click)="opendialog()" class="form-control">Open
+                        Dialog</button>
+                </div>
+                <div class="row" style="margin-top: 20px;">
+                    <figure class="galllery-item">
+                        <img src="/assets/img/gallexies.jpg" height="200px" width="350px">
+                    </figure>
+                </div>
+            </div>
+        </div>
         <div>
-            <button mat-raised-button color="primary" (click)="executeHooks()">Execute Life Cycle hooks</button>
+            <h1>Life Cycle Hook Execution Present in WorldCount Component</h1>
+            <div>
+                <button mat-raised-button color="primary" (click)="executeHooks()">Execute Life Cycle hooks</button>
+            </div>
         </div>
     </div>
-</div>

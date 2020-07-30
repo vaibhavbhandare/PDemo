@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import { UserService } from '../users/user.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-userdetails',
@@ -10,27 +10,33 @@ import { UserService } from '../users/user.service';
 export class UserdetailsComponent implements OnInit {
   public id: any;
   public userList:any;
-  constructor(private activateroute: ActivatedRoute, private userser:UserService) {
+  constructor(private userser: UserService,
+              private activatedroute: ActivatedRoute,
+              private router: Router) {
    
 
   }
 
   ngOnInit() {
-    this.userser.getUserdata().subscribe((data)=>{
-      this.userList = data
-    })
-    
-    this.activateroute.params.subscribe(data => {
-      this.id = Number(data['id'])
-    })
-   //console.log(this.id);
-   
-    
 
+    this.activatedroute.params.subscribe(value => {
+      this.id = Number(value['id']);
+    })
+
+    this.userser.getCovidPatient().subscribe(data => {
+      this.userList = data;
+    })
   }
 
-  userdetails(){
-
+  getBack() {
+    this.router.navigate(['/user'])
   }
 
+  goPrevious() {
+    this.router.navigate(['/userdetails', this.id - 1])
+  }
+
+  goNext() {
+    this.router.navigate(['/userdetails', this.id + 1])
+  }
 }

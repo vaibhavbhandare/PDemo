@@ -13,8 +13,6 @@
 
           <div style="margin-top: 25px;">
             <table class="table table-bordered">
-
-
               <thead>
                 <tr>
                   <th>ID</th>
@@ -22,10 +20,9 @@
                   <th>Report</th>
                   <th>Blood Group</th>
                   <th>Age</th>
+                  <th>Apply Operations</th>
                 </tr>
               </thead>
-
-
               <tbody>
                 <tr *ngFor="let item of patientData; let i = index">
                   <td>{{item.id}}</td>
@@ -33,6 +30,9 @@
                   <td>{{item.report}}</td>
                   <td>{{item.bloodgroup}}</td>
                   <td>{{item.age}}</td>
+                  <td>
+                    <button type="button" (click)="getUserData(item.id)"><img src="../../assets/img/visibility-24px.svg" width="20px" height="15px" alt=""></button>
+                  </td>
                 </tr>
               </tbody>
             </table>
@@ -44,4 +44,5 @@
       </mat-tab-group>
     </mat-card>
   </div>
+  
 </div>

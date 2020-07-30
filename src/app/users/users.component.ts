@@ -16,31 +16,22 @@ export class UsersComponent implements OnInit {
     private router: Router) { }
 
   ngOnInit() {
-    // this.usrser.getUserdata().subscribe((data=>{
-    //   this.userList = data
-    // }))
+    
+    this.usrser.getUserdata().subscribe((data=>{
+      this.userList = data
+    }))
+
     this.usrser.getCovidPatient().subscribe(value => {
       this.patientData = value;
-      console.log(value);
     },
       (err) => {
-        console.log("error"); // getting error when url are wrong
+        // getting error when url are wrong
+        console.log("error"); 
       })
-    console.log(this.patientData);
-
-    // this.usrser.getUserdataPromis().then((data) => {
-    //   this.userList = data;
-    // },
-    //   (err) => {
-    //     console.log("error"); // getting error when url are wrong
-    //   }
-    // )
-
-
   }
 
-  userdetails(id) {
-    // this.router.navigate(['/userdetails',id])
+  getUserData(id) {
+    this.router.navigate(['/userdetails', id])
   }
 
 }

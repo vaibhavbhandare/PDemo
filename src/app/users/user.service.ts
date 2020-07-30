@@ -9,6 +9,8 @@ export class UserService {
 
     public url:string ="http://jsonplaceholder.typicode.com/users";
     public covidUrl:string = "http://localhost:3000/Todos";
+    public id: any;
+    public data: any;
 
     constructor(private http:HttpClient){
        
@@ -30,4 +32,16 @@ export class UserService {
     getCovidPatient(): Observable<any> {
         return this.http.get(this.covidUrl + '/');
     }
+
+    // below method check the user is login or not depends on status gives 
+    // permission to the url visit or not for particular component
+
+    isuserLogin(): boolean {
+      return true;
+    }
+
+    isloginCovidMChild(): boolean {
+        return false;
+    }
+
 }

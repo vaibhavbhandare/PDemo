@@ -71,10 +71,11 @@ export class LoginComponent implements OnInit {
 
   onCancel() {
     this.stockChangeForm.reset();
+    // this.router.navigate(['/user']);
   }
 
   openSignUpform() {
-
+    
   }
 
   public hasError = (controlName: string, errorName: string) =>{

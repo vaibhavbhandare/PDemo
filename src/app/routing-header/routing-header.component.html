@@ -1,11 +1,35 @@
 <nav>
     <ul>
-        <li *ngFor="let item of allroutes">
+        <!-- <li *ngFor="let item of allroutes">
             <a routerLink="/{{item}}" routerLinkActive="active">{{item}}</a>
+        </li> or -->
+        <li>
+            <a [routerLink]="['/login']">Login Form</a>
+        </li>
+        <li>
+            <a [routerLink]="['/inventory']">Inventory</a>
+        </li>
+        <li>
+            <a [routerLink]="['/user']">User</a>
+        </li>
+        <li>
+            <a [routerLink]="['/fb-M/observable']">FB Observable</a>
+        </li>
+        <li>
+            <a [routerLink]="['/fb-M/reactive-form']">FB RDF</a>
+        </li>
+        <li>
+            <a [routerLink]="['/StartUp']">Start up</a>
+        </li>
+        <li>
+            <a [routerLink]="['/ag-grid-tree']">Ag Grid</a>
+        </li>
+        <li>
+            <a [routerLink]="['/covid19m']">Covid19 Module</a>
         </li>
         <div class="routing-button">
             <button class="but" routerLink="/Skill-M/skill-list">SkillM</button>
-            <button class="but" routerLink="/fb-M/fb">FB-M</button>
+            <button class="but" routerLink="/fb-M">FB-M</button>
         </div>
         <!-- <a [routerLink]="['/fb-M/dialogComp']" routerLinkActive="router-link-active" >D</a> -->
         <!-- <select name="" id="">Menu
