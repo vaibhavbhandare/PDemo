@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 import { FBMRoutingModule } from './fbm-routing.module';
 import { PepoleComponent } from './pepole/pepole.component';
 import { FriendsComponent } from './friends/friends.component';
@@ -22,7 +22,7 @@ import { MaterialModule } from '../material/material.module';
     ReactiveFormsModule,
     MaterialModule
   ],
-  entryComponents: [MyDialogComponentComponent],
-  providers: [FbserviceService , ObservableService]
+  entryComponents: [ MyDialogComponentComponent],
+  providers: [FbserviceService , ObservableService, DatePipe]
 })
 export class FBMModule { }

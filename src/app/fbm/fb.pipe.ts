@@ -8,7 +8,7 @@ export class CamelCaseComponent implements PipeTransform {
 
     transform(value: any , data: any) {
       if (!value) { return value; }
-      return value.replace(/\w\S*/g, function(txt) {
+      return value.replace(/\w\S*/g,  (txt) => {
           return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
       });
     }

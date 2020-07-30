@@ -8,6 +8,10 @@ import { InventoryComponent } from './inventory/inventory.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { UserdetailsComponent } from './userdetails/userdetails.component';
 
+import { AgGridTreeComponent } from './ag-grid-tree/ag-grid-tree.component';
+
+import { StartUpComponent } from './startup-metrics-component/StartUpComponent.component';
+import { CanactiveGuard } from './Guard/canactive.guard';
 
 const routes: Routes = [
   {
@@ -20,14 +24,19 @@ const routes: Routes = [
   {
     path: 'user',
     component: UsersComponent,
-    children: [
-      {
-        path: 'userdetails/:id',
-        component: UserdetailsComponent
-      }
-    ]
+    // children: [
+    //   {
+    //     path: 'user/userdetails/:id',
+    //     component: UserdetailsComponent
+    //   }
+    // ]
   },
-  { path: 'inventory/:abc', component: InventoryComponent },
+  {
+    path: 'userdetails/:id' ,
+    component: UserdetailsComponent,
+    canActivate: [CanactiveGuard]
+  },
+  // { path: 'inventory/:abc', component: InventoryComponent },
   {
     path: 'Skill-M',
     loadChildren: () => import('./skill-m/skill-m.module').then(m => m.SkillMModule)
@@ -41,10 +50,18 @@ const routes: Routes = [
   //   loadChildren:()=> import('./fbm/fbm.module').then(m=>m.FBMModule)
   // },
   {
+    path: 'StartUp' , component: StartUpComponent
+  },
+  {
+    path: 'ag-grid-tree' , component: AgGridTreeComponent
+  },
+  { path: 'covid19m',
+    loadChildren: () => import('./covid19-m/covid19-m.module').then( m => m.Covid19MModule)
+  },
+  {
     path: '**',
     component: PageNotFoundComponent
   }
-
 ];
 
 @NgModule({

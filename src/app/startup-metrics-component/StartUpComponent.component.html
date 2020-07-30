@@ -1,0 +1,82 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="col-sm-6">
+        <mat-checkbox style="margin-top: 7px;" class="example-margin" [(ngModel)]="checked" [disabled]="disabled">
+        </mat-checkbox>
+      </div>
+      <div class="col-sm-6">
+        <button mat-icon-button class="mat-icon-button" [matMenuTriggerFor]="menu"
+          aria-label="Example icon-button with a menu">
+          <mat-icon>more_vert</mat-icon>
+        </button>
+      </div>
+    </div>
+    <div class="col-sm-12">
+      <ag-grid-angular 
+        #agGrid 
+        id="myGrid" 
+        class="ag-theme-material country_detail_grid" 
+        [enableFilter]="true"
+        [enableSorting]="true" 
+        [columnDefs]="columnDefs" 
+        [rowData]="rowData" 
+        rowSelection="multiple"
+        (rowSelected)="onRowSelected($event)" 
+        [modules]="modules"
+        [treeData]="true"
+        [getDataPath]="getDataPath"
+        [autoGroupColumnDef]="autoGroupColumnDef"
+        [groupDefaultExpanded]="groupDefaultExpanded"
+        (gridReady)="onGridReady($event)"
+       >
+      </ag-grid-angular>
+    </div>
+  </div>
+  <div class="row" style="margin-top: 25px;">
+    <div>
+      <h6>Historical Studies {{allStudies}}</h6>
+    </div>
+    <div class="col-sm-12">
+      <ag-grid-angular 
+      #agGrid id="myGrid" 
+      class="ag-theme-material country_detail_grid"
+      [columnDefs]="ColumnDefStartupM" 
+      [rowData]="rowDataStartupM" 
+      [gridOptions]="gridOptions">
+      </ag-grid-angular>
+    </div>
+  </div>
+
+</div>
+<!-- <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+    <mat-icon>more_vert</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item>
+      <mat-icon>dialpad</mat-icon>
+      <span>Redial</span>
+    </button>
+    <button mat-menu-item disabled>
+      <mat-icon>voicemail</mat-icon>
+      <span>Check voice mail</span>
+    </button>
+    <button mat-menu-item>
+      <mat-icon>notifications_off</mat-icon>
+      <span>Disable alerts</span>
+    </button>
+</mat-menu>  crop_free-->
+<mat-menu #menu="matMenu">
+  <button mat-menu-item>
+    <mat-icon>print</mat-icon>
+    <span>Print</span>
+  </button>
+  <button mat-menu-item>
+    <mat-icon>file_copy</mat-icon>
+    <span>Copy</span>
+  </button>
+  <button mat-menu-item>
+    <mat-icon>import_export</mat-icon>
+    <span>Export</span>
+  </button>
+</mat-menu>

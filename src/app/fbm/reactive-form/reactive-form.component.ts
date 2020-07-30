@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormBuilder , Validators} from '@angular/forms';
+import { DatePipe } from '@angular/common';
 
 
 @Component({
@@ -8,10 +9,13 @@ import { FormControl, FormGroup, FormBuilder , Validators} from '@angular/forms'
   styleUrls: ['./reactive-form.component.css']
 })
 export class ReactiveFormComponent implements OnInit {
-  constructor(private fb: FormBuilder) { }
+
+  constructor(private fb: FormBuilder,
+              private datePipe: DatePipe) { }
 
   public changename = 'vaibhav';
-  public title = 'Maharashtra Mega Bharati Online';
+  public title = 'Maharashtra Mega Bharati Online 2020';
+  public todaydate: string;
 
   name = new FormControl('Hi');
 
@@ -30,9 +34,9 @@ export class ReactiveFormComponent implements OnInit {
   // Using FormBuilder
 
   megaBharatiForm = this.fb.group({
-    name: ['' , [Validators.required, Validators.minLength(4)]],
-    lastname: ['' , Validators.required],
-    age : [''],
+    name: ['Enter First Name' , [Validators.required, Validators.minLength(4)]],
+    lastname: ['Enter Last Name' , [Validators.required, Validators.minLength(4)]],
+    ages : [0, [Validators.required, Validators.minLength(4)]],
     address: this.fb.group({
       street: ['MH'],
       city: [''],
@@ -42,6 +46,7 @@ export class ReactiveFormComponent implements OnInit {
   });
 
   ngOnInit() {
+    this.todaydate = this.datePipe.transform(Date.now());
   }
 
   updateName() {

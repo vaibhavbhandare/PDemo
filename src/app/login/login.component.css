@@ -1,0 +1,28 @@
+.loginheader {
+    background-color: red;
+}
+
+/* .mat-card {
+    padding-left: 157px;
+} */
+
+.mat-toolbar-single-row {
+    padding: 0 16px 0 99px;
+}
+
+.mat-toolbar {
+    background: #3f51b5;
+    color: white;
+}
+
+.dec-toolbar {
+    padding-left: 11px;
+}
+
+/* .mat-dialog-container {
+    padding-bottom: 0px;   
+} */
+
+.mat-card-title{
+    text-align: center;
+}

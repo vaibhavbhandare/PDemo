@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'pawel-comege',
+  selector: 'app-pawel-comege',
   templateUrl: 'welcome.component.html',
   styleUrls: ['welcome.component.css']
 })

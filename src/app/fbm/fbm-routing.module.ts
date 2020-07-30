@@ -4,16 +4,19 @@ import { PepoleComponent } from './pepole/pepole.component';
 import { ObservableComponent } from './observable/observable.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { MyDialogComponentComponent } from './my-dialog-component/my-dialog-component.component';
+import { CanactiveGuard } from '../Guard/canactive.guard';
 
 
 const routes: Routes = [
   {
-    path: 'fb',
+    path: '',
     component: PepoleComponent
   },
   {
     path: 'observable',
-    component: ObservableComponent
+    component: ObservableComponent,
+    // all methods present in canActiveGuards root Service that is deactivate method
+    canDeactivate: [CanactiveGuard]
   },
   {
     path: 'reactive-form',

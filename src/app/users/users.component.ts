@@ -10,25 +10,28 @@ import { Router } from '@angular/router';
 export class UsersComponent implements OnInit {
 
   public userList: any;
+  public patientData: any = [];
+
   constructor(private usrser: UserService,
               private router: Router) { }
 
   ngOnInit() {
-    // this.usrser.getUserdata().subscribe((data=>{
-    //   this.userList = data
-    // }))
 
-    this.usrser.getUserdataPromis().then((data) => {
+    this.usrser.getUserdata().subscribe((data => {
       this.userList = data;
+    }));
+
+    this.usrser.getCovidPatient().subscribe(value => {
+      this.patientData = value;
     },
       (err) => {
-        console.log('error'); // getting error when url are wrong
-      }
-    );
+        // getting error when url are wrong
+        console.log('error');
+      });
   }
 
-  userdetails(id) {
-    // this.router.navigate(['/userdetails',id])
+  getUserData(id) {
+    this.router.navigate(['/userdetails', id]);
   }
 
 }
