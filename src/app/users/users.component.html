@@ -8,9 +8,11 @@
 <div>
   <div class="row">
     <mat-card class="header-tabs">
+      <div>
+        <button mat-stroked-button color="accent" (click)="postdata()">Add New</button>
+      </div>
       <mat-tab-group>
         <mat-tab label="First">
-
           <div style="margin-top: 25px;">
             <table class="table table-bordered">
               <thead>
@@ -31,7 +33,11 @@
                   <td>{{item.bloodgroup}}</td>
                   <td>{{item.age}}</td>
                   <td>
-                    <button type="button" (click)="getUserData(item.id)"><img src="../../assets/img/visibility-24px.svg" width="20px" height="15px" alt=""></button>
+                    <!-- <button type="button" (click)="getUserData(item.id)"><img src="../../assets/img/visibility-24px.svg"  alt=""></button> -->
+                    <!-- <button type="button" color="warn" (click)="deleteData(item.id)">                     
+                    </button> -->
+                    <button type="button" (click)="getUserData(item.id)"><mat-icon >account_circle</mat-icon></button> &nbsp;&nbsp;
+                    <button type="button" (click)="deleteData(item.id)"><mat-icon>delete</mat-icon></button>
                   </td>
                 </tr>
               </tbody>

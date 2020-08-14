@@ -15,6 +15,7 @@ export class MyDialogComponentComponent implements OnInit {
 
   ngOnInit() {
   }
+
   dilogdata(value) {
     console.log(value);
     this.dialogRef.close('it was close'); // this msg reflects in subscribe class observable

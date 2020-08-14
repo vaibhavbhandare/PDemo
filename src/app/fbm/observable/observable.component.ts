@@ -1,8 +1,9 @@
 import { Component, OnInit, OnChanges, DoCheck, AfterContentInit, AfterContentChecked,
-  AfterViewInit, AfterViewChecked, OnDestroy } from '@angular/core';
+  AfterViewInit, AfterViewChecked, OnDestroy, ViewChild } from '@angular/core';
 import { ObservableService } from './observable.service';
 import { MatDialog } from '@angular/material';
 import { MyDialogComponentComponent } from '../my-dialog-component/my-dialog-component.component';
+import { SubjectService } from '../subject.service';
 
 
 @Component({
@@ -13,11 +14,16 @@ import { MyDialogComponentComponent } from '../my-dialog-component/my-dialog-com
 export class ObservableComponent implements OnChanges, OnInit, AfterContentInit,
 AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy {
 
-  constructor(private observable: ObservableService, public dialog: MatDialog) {
+  constructor(private observable: ObservableService,
+              public dialog: MatDialog,
+              private subjectService: SubjectService) {
    // alert('1. on changes called');
   }
 
   public data: any;
+  public rafel = 'Welcome Rafel to India';
+  public inputValue;
+  @ViewChild('box' , {static: true}) boxRef: any;
 
   // ngDoCheck(): void {
   //   alert('');
@@ -45,6 +51,7 @@ AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy {
 
   ngOnInit() {
 
+
     this.observable.getUserdata().subscribe((res) => {
       this.data = res;
     });
@@ -54,12 +61,30 @@ AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy {
 
   openDialogBox() {
    const dialogRef = this.dialog.open(MyDialogComponentComponent, {
-      width: '250px', height: '300px'
+      width: '300px', height: '250px'
     });
 
    dialogRef.afterClosed().subscribe(result => {
       // console.log('The dialog was closed');
       console.log(result);
     });
+  }
+
+  keyName(event) {
+   // console.log(event.target.value); // works if method have $event
+    console.log(this.boxRef);
+  }
+
+  blurevent(value) {
+    console.log(value);
+  }
+
+  getName(value) {
+   this.rafel = value;
+  }
+
+  // below method pass the calue to child to subject from rxjs
+  changeSub() {
+    this.subjectService.setMsg(this.inputValue);
   }
 }

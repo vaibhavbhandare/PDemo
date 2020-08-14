@@ -11,10 +11,11 @@ import { ObservableService } from './observable/observable.service';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { MyDialogComponentComponent } from './my-dialog-component/my-dialog-component.component';
 import { MaterialModule } from '../material/material.module';
+import { ObservablechildComponent } from './observablechild/observablechild.component';
 
 @NgModule({
   declarations: [PepoleComponent, FriendsComponent, CamelCaseComponent,
-     ObservableComponent, ReactiveFormComponent, MyDialogComponentComponent],
+     ObservableComponent, ReactiveFormComponent, MyDialogComponentComponent, ObservablechildComponent],
   imports: [
     CommonModule,
     FBMRoutingModule,

@@ -26,3 +26,7 @@
 .mat-card-title{
     text-align: center;
 }
+
+.mat-slide-toggle { 
+    margin-bottom: 10px;
+}

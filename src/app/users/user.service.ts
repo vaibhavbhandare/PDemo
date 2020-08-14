@@ -13,9 +13,7 @@ export class UserService {
     public data: any;
 
     constructor(private http: HttpClient) {
-
     }
-
 
     getUserdata(): Observable<any> {
        return this.http.get(this.url);
@@ -42,6 +40,14 @@ export class UserService {
 
     isloginCovidMChild(): boolean {
         return false;
+    }
+
+    postSelectedData(value): Observable<any> {
+        return this.http.post(this.covidUrl, value);
+    }
+
+    deleteCovidData(id) {
+      return this.http.delete(this.covidUrl + '/' + id);
     }
 
 }

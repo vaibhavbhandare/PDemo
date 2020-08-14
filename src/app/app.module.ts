@@ -56,7 +56,7 @@ import { SubmitUserComponent } from './login/common/submituser.component';
     AgGridModule.withComponents([StartUpComponent, AgGridTreeComponent])
   ],
   entryComponents: [SignUpFormComponent, SubmitUserComponent],
-  providers: [UserService],
+  providers: [UserService, DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

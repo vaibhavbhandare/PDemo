@@ -96,4 +96,9 @@ export class WorldCountComponent implements OnInit {
    // All same method used for session storage also
   }
 
+  navigate() {
+    // navigation is possible by using below syntax also
+   this.router.navigate(['fb-M', 'observable']);
+  }
+
 }

@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterContentInit } from '@angular/core';
 import { HeaderAuthService } from '../header.service';
 import { FormControl, FormGroup, Validators, FormBuilder } from '@angular/forms';
-import { MatDialog } from '@angular/material';
+import { MatDialog, ThemePalette, MatCheckboxModule  } from '@angular/material';
 import { Router } from '@angular/router';
 import { SubmitUserComponent } from './common/submituser.component';
 
@@ -11,7 +11,7 @@ import { SubmitUserComponent } from './common/submituser.component';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent implements OnInit, AfterContentInit {
 
   public UN = 'admin';
   public PWD = 'admin';
@@ -19,6 +19,10 @@ export class LoginComponent implements OnInit {
   public role = '179.54567';
   public stockChangeForm: any;
   public serviceProduct: Array<string>;
+  public color: ThemePalette = 'primary';
+  public checked: boolean;
+  public disabled: boolean;
+  public chnagetext: boolean;
 
   constructor(private auth: HeaderAuthService,
               private fb: FormBuilder, private dialog: MatDialog,
@@ -27,14 +31,16 @@ export class LoginComponent implements OnInit {
     this.serviceProduct = ['Google', 'Facebook', 'MicroSoft', 'BMW'];
   }
 
-
+  @ViewChild('toggle', {static: true}) toggleRef: any;
 
   ngOnInit() {
     this.stockChangeForm = new FormGroup({
       name: new FormControl('', [Validators.required, Validators.maxLength(10)]),
       selectedProduct: new FormControl('', [Validators.required]),
       date: new FormControl('', [Validators.required]),
-      text: new FormControl('', [Validators.required, Validators.maxLength(10)])
+      email: new FormControl('', [Validators.required, Validators.email]),
+      text: new FormControl({value: '', disabled: this.chnagetext}, [Validators.required, Validators.maxLength(10)]),
+      toggle: new FormControl('', [Validators.required])
     });
 
     // this.stockChangeForm = this.fb.group({
@@ -43,6 +49,10 @@ export class LoginComponent implements OnInit {
     //   date: ['', Validators.required],
     //   text: ['', [Validators.required, Validators.minLength(10)]]
     // })
+  }
+
+  ngAfterContentInit() {
+    // console.log(this.toggleRef);
   }
 
   login() {
@@ -78,6 +88,11 @@ export class LoginComponent implements OnInit {
 
   public hasError = (controlName: string, errorName: string) => {
     return this.stockChangeForm.controls[controlName].hasError(errorName);
+  }
+
+  toggleChange() {
+   console.log(this.stockChangeForm.value.toggle);
+   this.chnagetext = this.stockChangeForm.value.toggle;
   }
 
 }
