@@ -1,10 +1,10 @@
 import { Component, OnInit, ViewChild, AfterContentInit } from '@angular/core';
 import { HeaderAuthService } from '../header.service';
 import { FormControl, FormGroup, Validators, FormBuilder } from '@angular/forms';
-import { MatDialog, ThemePalette, MatCheckboxModule  } from '@angular/material';
+import { MatDialog, MatCheckboxModule  } from '@angular/material';
 import { Router } from '@angular/router';
 import { SubmitUserComponent } from './common/submituser.component';
-
+import {ThemePalette} from '@angular/material/core';
 
 @Component({
   selector: 'app-login',
@@ -19,10 +19,10 @@ export class LoginComponent implements OnInit, AfterContentInit {
   public role = '179.54567';
   public stockChangeForm: any;
   public serviceProduct: Array<string>;
-  public color: ThemePalette = 'primary';
   public checked: boolean;
   public disabled: boolean;
   public chnagetext: boolean;
+  public color: ThemePalette = 'warn';
 
   constructor(private auth: HeaderAuthService,
               private fb: FormBuilder, private dialog: MatDialog,
