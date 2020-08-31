@@ -5,9 +5,9 @@ export class SkillServiceService {
 
   constructor() { }
 
-  Company:string="Persistent System Pvt. Ltd." // Bydefault it is public 
+  Company = 'Persistent System Pvt. Ltd.'; // Bydefault it is public
 
- getName():string{
+ getName(): string {
    return this.Company;
  }
 }

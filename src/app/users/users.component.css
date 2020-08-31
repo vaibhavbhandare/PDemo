@@ -1,0 +1,14 @@
+.header-tabs {
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-top: 25px;
+    border-radius: 8px;
+}
+
+.mat-tab-body {
+    margin-top: 25px;
+}
+
+.mat-icon {
+    /* margin-right: 17px; */
+}

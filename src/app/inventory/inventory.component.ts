@@ -12,15 +12,15 @@ export class InventoryComponent implements OnInit {
 
   productList: Array<Product>;
   constructor(private dstaser: DataService,
-    private activatedroute: ActivatedRoute) {
+              private activatedroute: ActivatedRoute) {
     this.productList = this.dstaser.getProduct();
   }
 
   public id: any;
   ngOnInit() {
     this.activatedroute.params.subscribe((data) => {
-      this.id = Number(data['abc'])
-    })
+      this.id = Number(data.abc);
+    });
   }
 
 }

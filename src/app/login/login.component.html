@@ -1,6 +1,125 @@
-<p>login works!</p>
-<p>Data Binding Approach</p>
-Enter Username: <input type="text" [(ngModel)]="UN" name="UN"><br>
-Enter Password: <input type="password" [(ngModel)]="PWD" name="PWD"><br>
-value change : {{UN}}
-<button (click)="login()">Login</button>
+<div class='container'>
+    <div class="col-sm-6">
+        <!-- <div [ngClass]="changeColor?  'loginheader' : ''">
+            <h1 class="">Login Works !!</h1>
+        </div>
+        <div class='row'>
+            <div>
+                <h4>Data Binding Approach {{role}}</h4>
+            </div>
+            Enter Username: <input type="text" [(ngModel)]="UN" name="UN"><br>
+            Enter Password: <input type="password" [(ngModel)]="PWD" name="PWD"><br>
+            value change : {{UN}}
+            <button (click)="login()">Login</button>
+            <button mat-raised-button color="accent" (click)="changeHeadingColor()">Change Heading Color</button>
+        </div> -->
+        <div class="row" style="margin-top: 26px; margin-right: 26px;">
+            <mat-card>
+                <div>
+                    <mat-toolbar class="dec-toolbar">
+                        <span>Description</span>
+                    </mat-toolbar>
+                </div>
+                <div>
+                    <mat-card-content style="margin-top: 28px; margin-bottom: 24px;">
+                        <p style="font-size:23px">
+                            Webpack is a module bundler (manages and loads independent modules). It takes dependent
+                            modules
+                            and compiles them to a single (file) bundle. You can use this bundle while developing apps
+                            using
+                            command line or, by configuring it using webpack.config file.
+                            Babel is a JavaScript compiler and transpiler. It is used to convert one source code to
+                            other.
+                            Using this you will be able to use the new ES6 features in your code where, babel converts
+                            it into
+                            plain old ES5 which can be run on all browsers.
+                        </p>
+                    </mat-card-content>
+
+                </div>
+            </mat-card>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="row" style="margin-top: 26px;">
+            <mat-card>
+                <!-- <mat-toolbar>
+                    <span>Welcome to New Stock of Market</span>
+                </mat-toolbar> -->
+                <mat-card-title>Welcome to New Stock of Market</mat-card-title>
+                <div class="row">
+                </div>
+                <div style="margin-top: 26px;">
+                    <form action="" [formGroup]="stockChangeForm" fxLayoutAlign="center center" novalidate
+                        fxLayoutGap="10px">
+                        <div class="example-container">
+
+                            <mat-card-content>
+                                <mat-form-field appearance="fill" style="width: 100%;">
+                                    <mat-label>Please Enter Full Name</mat-label>
+                                    <input formControlName="name" matInput>
+                                    <mat-hint align="end">Max 10 Characters Necessary.</mat-hint>
+                                    <mat-error *ngIf="hasError('name', 'required')">Name is required</mat-error>
+                                    <mat-error *ngIf="hasError('name', 'maxLength')">Max Char 10
+                                    </mat-error>
+                                </mat-form-field>
+                                <br>
+                                <mat-form-field appearance="fill" style="width: 100%;">
+                                    <mat-label>Select Product Service</mat-label>
+                                    <mat-select formControlName="selectedProduct">
+                                        <mat-option *ngFor="let item of serviceProduct" [value]="item">{{item}}
+                                        </mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                                <br>
+                                <mat-form-field appearance="fill" style="width: 100%;">
+                                    <mat-label>Choose a date</mat-label>
+                                    <input matInput formControlName="date" [matDatepicker]="picker">
+                                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                    <mat-datepicker #picker></mat-datepicker>
+                                </mat-form-field>
+                                <br>
+                                <mat-form-field appearance="fill" style="width: 100%;">
+                                    <mat-label>Enter your email</mat-label>
+                                    <input placeholder="pat@example.com" matInput formControlName="email" required>
+                                    <mat-error *ngIf="stockChangeForm.get('email').hasError('required')">You must enter
+                                        a value</mat-error>
+                                    <mat-error *ngIf="stockChangeForm.get('email').hasError('email')">Please Enter Valid
+                                        Email</mat-error>
+                                </mat-form-field>
+                                <br>
+                                <mat-form-field appearance="fill" style="width: 100%;">
+                                    <mat-label>Description</mat-label>
+                                    <textarea formControlName="text" matInput></textarea>
+                                    <mat-hint align="end">Not more then 10 characters long.</mat-hint>
+                                    <mat-error *ngIf="hasError('text', 'required')">Address is required</mat-error>
+                                    <mat-error *ngIf="hasError('text', 'maxLength')">You have more than 10
+                                        characters</mat-error>
+                                </mat-form-field>
+                            </mat-card-content>
+                            <section class="example-section">
+                                <mat-slide-toggle class="example-margin" (change)="toggleChange()"
+                                    formControlName="toggle" #toggle [color]="color">
+                                    Disabled !
+                                </mat-slide-toggle>
+                            </section>
+
+                        </div>
+                        <div>
+                            <mat-card-actions align="center">
+                                <button mat-raised-button color="primary" [disabled]="!stockChangeForm.valid"
+                                    (click)="onSubmit(stockChangeForm.value)">Submit</button>
+                                <button type="button" mat-raised-button color="warn"
+                                    (click)="onCancel()">Cancel</button>
+                                <button mat-stroked-button type="button" (click)="openSignUpform()">Sign Up</button>
+                            </mat-card-actions>
+                        </div>
+                    </form>
+                </div>
+            </mat-card>
+        </div>
+    </div>
+    <!-- to check the 
+        <button type="button" mat-raised-button color="warn"
+    (click)="onCancel()">Cancel</button> -->
+</div>

@@ -1,18 +1,18 @@
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
-import {Observable} from 'rxjs';
+import { Subject , Observable} from 'rxjs';
 
 @Injectable()
 export class FbserviceService {
 
-  subject = new Subject<any>();
+  public subject = new Subject<any>();
+
   constructor() { }
 
-  setdata(data){
-   this.subject.next(data)
+  setdata(data) {
+   this.subject.next(data);
   }
 
-  getData():Observable<any>{
+  getData(): Observable<any> {
     return this.subject.asObservable();
   }
 

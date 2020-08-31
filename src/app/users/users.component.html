@@ -1,7 +1,54 @@
-<div>
+<!-- <div>
     <ul>
         <li *ngFor="let item of userList">
           <a [routerLink]="['userdetails',item.id]" (click)="userdetails(item.id)"> {{item.name}}</a>
         </li>
     </ul>
+</div> -->
+<div>
+  <div class="row">
+    <mat-card class="header-tabs">
+      <div>
+        <button mat-stroked-button color="accent" (click)="postdata()">Add New</button>
+      </div>
+      <mat-tab-group>
+        <mat-tab label="First">
+          <div style="margin-top: 25px;">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Name</th>
+                  <th>Report</th>
+                  <th>Blood Group</th>
+                  <th>Age</th>
+                  <th>Apply Operations</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of patientData; let i = index">
+                  <td>{{item.id}}</td>
+                  <td>{{item.name}}</td>
+                  <td>{{item.report}}</td>
+                  <td>{{item.bloodgroup}}</td>
+                  <td>{{item.age}}</td>
+                  <td>
+                    <!-- <button type="button" (click)="getUserData(item.id)"><img src="../../assets/img/visibility-24px.svg"  alt=""></button> -->
+                    <!-- <button type="button" color="warn" (click)="deleteData(item.id)">                     
+                    </button> -->
+                    <button type="button" (click)="getUserData(item.id)"><mat-icon >account_circle</mat-icon></button> &nbsp;&nbsp;
+                    <button type="button" (click)="deleteData(item.id)"><mat-icon>delete</mat-icon></button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+        </mat-tab>
+        <mat-tab label="Second"> Content 2 </mat-tab>
+        <mat-tab label="Third"> Content 3 </mat-tab>
+      </mat-tab-group>
+    </mat-card>
+  </div>
+  
 </div>

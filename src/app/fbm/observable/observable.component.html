@@ -1,5 +1,39 @@
 <div class="container">
-    <h1 class="obser"> Welcome to Observable of FB Module</h1>
+    <h1 class="obser"> Welcome to Observable of FB Module </h1>
     <!-- <ng-container *ngFor="let item of data"> {{item.name}}</ng-container> -->
-    <div> {{data}} </div>    
+    <div> {{data}} </div>
+    <button class="btn btn-primary" (click)="openDialogBox()">Open Form</button>
+    <div>
+        <label for="">Name</label>
+        <!-- <input type="text" #box (keyup)="keyName(box.value)"> -->
+        <input type="text" #box (keyup.enter)="keyName(box.value)" (blur)="blurevent(box.value)"
+        class="form-control" placeholder="Please Enter Your Good Name">
+        <p>{{box.value}}</p>
+    </div>
+    <div>
+        <div>
+            <p>get count from method get call from child component</p>
+           {{observableChild.getCount()}}
+        </div>
+        <app-observablechild 
+        [rafelTitle]="rafel"
+        (valueChange)="getName($event)"
+        #observableChild
+         ></app-observablechild>   
+    </div>
+    <div class="row">
+        <div>
+            <label for="">Enter Subject Name</label>
+        <input type="text" class="form-control" [(ngModel)]="inputValue">
+        </div>
+        <div>
+            <button mat-stroked-button color="warn" (click)="changeSub()">Change Subject</button>
+        </div>
+        <mat-card-title>Below line is mat divider</mat-card-title>
+        <mat-divider></mat-divider>
+    </div>
+    <div class="row">
+       <mat-card-title>{{notSure}}</mat-card-title>
+       <mat-divider></mat-divider>
+    </div>
 </div>

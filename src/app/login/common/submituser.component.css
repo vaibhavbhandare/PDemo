@@ -1,0 +1,17 @@
+.mat-toolbar {
+  background: greenyellow;
+}
+
+.mat-container {
+    padding-bottom: 0px;
+}
+
+.mat-dialog-container {
+    padding-bottom: 0px;   
+}
+
+.submit-action {
+    margin-top: 36px;
+    margin-bottom: 0px;
+}
+
