@@ -17,12 +17,14 @@ AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy {
   constructor(private observable: ObservableService,
               public dialog: MatDialog,
               private subjectService: SubjectService) {
+              this.notSure = 'this is unknown datatype';
    // alert('1. on changes called');
   }
 
   public data: any;
   public rafel = 'Welcome Rafel to India';
   public inputValue;
+  public notSure: unknown;
   @ViewChild('box' , {static: true}) boxRef: any;
 
   // ngDoCheck(): void {
@@ -38,6 +40,7 @@ AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy {
   }
   ngAfterViewInit(): void {
     // alert('6. after view init called');
+    
   }
   ngAfterViewChecked(): void {
    // alert('7. after view init checked');

@@ -12,6 +12,8 @@ import { AgGridTreeComponent } from './ag-grid-tree/ag-grid-tree.component';
 
 import { StartUpComponent } from './startup-metrics-component/StartUpComponent.component';
 import { CanactiveGuard } from './Guard/canactive.guard';
+import { LitElementComponent } from './lit-element-component/lit-element.component';
+import { StoryBookComponent } from './story-book/story-book.component';
 
 const routes: Routes = [
   {
@@ -57,6 +59,12 @@ const routes: Routes = [
   },
   { path: 'covid19m',
     loadChildren: () => import('./covid19-m/covid19-m.module').then( m => m.Covid19MModule)
+  },
+  {
+    path: 'lit-Elements' , component: LitElementComponent
+  },
+  {
+    path: 'story-book', component: StoryBookComponent
   },
   {
     path: '**',

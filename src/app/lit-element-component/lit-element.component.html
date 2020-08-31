@@ -1,0 +1,32 @@
+<div class="container">
+    <mat-card>
+        <mat-card-title>{{title}}</mat-card-title>
+        <div>
+            <div class="input">
+                <mat-form-field class="example-form-field">
+                    <mat-label>Enter input</mat-label>
+                    <input matInput type="text" [(ngModel)]="value">
+                    <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+                        <mat-icon>close</mat-icon>
+                    </button>
+                </mat-form-field>
+
+                <mat-card-actions class="button">
+                    <button mat-raised-button color="primary" (click)="getvalue(value)">Submit</button>
+                </mat-card-actions>
+            </div>
+            <mat-divider></mat-divider>
+        </div>
+        <div>
+            <hello-world name="{{name}}"></hello-world>
+            <mat-divider></mat-divider>
+        </div>
+        <div class="element-two">
+            <element-two inputDetails="{{inputValue}}"></element-two>
+            <mat-divider></mat-divider>
+        </div>
+        <div class="element-three">
+            <element-three></element-three>
+        </div>
+    </mat-card>
+</div>

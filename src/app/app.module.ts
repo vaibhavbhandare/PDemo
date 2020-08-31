@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -26,6 +26,10 @@ import { AgGridModule } from 'ag-grid-angular';
 import { AgGridTreeComponent } from './ag-grid-tree/ag-grid-tree.component';
 import { StartUpComponent } from './startup-metrics-component/StartUpComponent.component';
 import { SubmitUserComponent } from './login/common/submituser.component';
+import { LitElementComponent } from './lit-element-component/lit-element.component';
+import { HelloElement } from './lit-element-component/elements/lit-element'
+import { ElementTwo } from './lit-element-component/elements/lit-element-two';
+import { StoryBookComponent } from './story-book/story-book.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,7 +46,9 @@ import { SubmitUserComponent } from './login/common/submituser.component';
     UserdetailsComponent,
     StartUpComponent,
     AgGridTreeComponent,
-    SubmitUserComponent
+    SubmitUserComponent,
+    LitElementComponent,
+    StoryBookComponent
   ],
   imports: [
     BrowserModule,
@@ -57,6 +63,8 @@ import { SubmitUserComponent } from './login/common/submituser.component';
   ],
   entryComponents: [SignUpFormComponent, SubmitUserComponent],
   providers: [UserService, DataService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
+
 export class AppModule { }
