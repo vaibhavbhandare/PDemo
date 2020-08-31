@@ -5,6 +5,7 @@ import './elements/element-three.js';
 
 // checking the element present or not otherwise asseration get fails
 console.assert(HelloElement !== undefined);
+
 console.assert(ElementTwo !== undefined);
 
 @Component({
