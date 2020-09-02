@@ -27,9 +27,9 @@ import { AgGridTreeComponent } from './ag-grid-tree/ag-grid-tree.component';
 import { StartUpComponent } from './startup-metrics-component/StartUpComponent.component';
 import { SubmitUserComponent } from './login/common/submituser.component';
 import { LitElementComponent } from './lit-element-component/lit-element.component';
-import { HelloElement } from './lit-element-component/elements/lit-element'
+import { HelloElement } from './lit-element-component/elements/lit-element';
 import { ElementTwo } from './lit-element-component/elements/lit-element-two';
-import { StoryBookComponent } from './story-book/story-book.component'
+import { StoryBookComponent } from './story-book/story-book.component';
 @NgModule({
   declarations: [
     AppComponent,
